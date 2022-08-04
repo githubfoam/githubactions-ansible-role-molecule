@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - test
-  
+
 
 env:
   MOLECULEW_USE_SYSTEM: 'true'
@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         ansible-version:
-          - '2.10.7' 
+          - '2.10.7'
         molecule-scenario:
           - ubuntu2004
     env:
@@ -33,31 +33,32 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-      
+
       - name: Cache Molecule
         id: molecule-cache
         uses: actions/cache@v2
         with:
           path: ~/.moleculew
-          key: Ansible-${{ matrix.ansible-version }}-${{ hashFiles('.moleculew/**') }}          
+          key: Ansible-${{ matrix.ansible-version }}-${{ hashFiles('.moleculew/**') }}
 
       - name: Wrapper permissions
         run: chmod 'u+x' moleculew && ls -lai moleculew
-          
-        
+
+
       - name: Install dependencies
         if: steps.molecule-cache.outputs.cache-hit != 'true'
         run: ./moleculew wrapper-install
         # run: |
-        #   chmod 'u+x' moleculew 
+        #   chmod 'u+x' moleculew
         #   ./moleculew wrapper-install
 
 
       - name: Dependency versions
         run: ./moleculew wrapper-versions
 
-      - name: Molecule debug test 
+      - name: Molecule debug test
         run: ./moleculew --debug test --scenario-name=${{ matrix.molecule-scenario }}
 
-      # - name: Molecule test 
+      # - name: Molecule test
       #   run: ./moleculew test --scenario-name=${{ matrix.molecule-scenario }}
+
