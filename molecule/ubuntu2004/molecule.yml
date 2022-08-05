@@ -18,6 +18,15 @@ driver:
 #   ansible-lint
 #   flake8
 
+# https://molecule.readthedocs.io/en/latest/configuration.html
+lint: |
+  set -e
+  # yamllint .
+  yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" .
+  ansible-lint
+  flake8
+
+
 # lint:
 #   - |
 #     set -e
@@ -28,15 +37,15 @@ driver:
 #       options:
 #         config-file: molecule/ubuntu2004/yaml-lint.yml
 
-lint:
-  - name: yamllint
-    options:
-      config-file: molecule/ubuntu2004/yaml-lint.yml
-  - |
-    set -e
-    yamllint .
-    ansible-lint
-    flake8
+# lint:
+#   - name: yamllint
+#     options:
+#       config-file: molecule/ubuntu2004/yaml-lint.yml
+#   - |
+#     set -e
+#     yamllint .
+#     ansible-lint
+#     flake8
 
 platforms:
   - name: ansible_role_ubuntu_2004
