@@ -5,7 +5,17 @@ dependency:
 driver:
   name: docker
 
-lint: |
+# lint: |
+#   set -e
+#   yamllint .
+#   ansible-lint
+#   flake8
+
+lint:
+  name: yamllint
+  options:
+    config-file: molecule/ubuntu2004/yaml-lint.yml
+  |
   set -e
   yamllint .
   ansible-lint
