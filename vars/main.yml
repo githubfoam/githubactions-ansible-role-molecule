@@ -1,4 +1,3 @@
 ---
 # Dir where Minikube should be installed
 minikube_install_dir: '/usr/local/bin'
-
