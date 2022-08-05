@@ -23,7 +23,7 @@ lint: |
   set -e
   # yamllint .
   # yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" .
-  yamllint -c custom-yaml-lint.yml
+  yamllint -c custom-yaml-lint.yml .
   ansible-lint
   flake8
 
