@@ -12,14 +12,14 @@ driver:
 #   flake8
 
 lint:
-  name: yamllint
-  options:
-    config-file: molecule/ubuntu2004/yaml-lint.yml
-  |
-  set -e
-  yamllint .
-  ansible-lint
-  flake8
+  - name: yamllint
+    options:
+      config-file: molecule/ubuntu2004/yaml-lint.yml
+    |
+    set -e
+    yamllint .
+    ansible-lint
+    flake8
 
 platforms:
   - name: ansible_role_ubuntu_2004
