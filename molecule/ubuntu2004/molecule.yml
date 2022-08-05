@@ -5,11 +5,18 @@ dependency:
 driver:
   name: docker
 
+lint:
+  name: yamllint
+  options:
+    config-data:
+      line-length: disable
+
 lint: |
   set -e
   yamllint .
   ansible-lint
   flake8
+
 
 # lint:
 #   - name: yamllint
