@@ -56,6 +56,9 @@ jobs:
       - name: Dependency versions
         run: ./moleculew wrapper-versions
 
+      - name: Molecule debug lint
+        run: ./moleculew --debug lint --scenario-name=${{ matrix.molecule-scenario }}
+
       - name: Molecule debug test
         run: ./moleculew --debug test --scenario-name=${{ matrix.molecule-scenario }}
 
