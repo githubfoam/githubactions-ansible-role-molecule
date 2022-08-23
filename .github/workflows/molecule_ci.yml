@@ -23,6 +23,7 @@ jobs:
         molecule-scenario:
           - ubuntu2004
           - ubuntu2204
+          - opensuseleap
     env:
       MOLECULEW_ANSIBLE: ${{ matrix.ansible-version }}
 
