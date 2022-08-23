@@ -2,4 +2,4 @@
 - name: Converge
   hosts: all
   roles:
-    - role: ansible_role_ubuntu_2004
+    - role: ansible_role_molecule
