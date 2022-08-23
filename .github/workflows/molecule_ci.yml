@@ -26,7 +26,7 @@ jobs:
           - opensuseleap
           - fedora
           - centos7
-          # - centos8
+          - debian
           - stream9
     env:
       MOLECULEW_ANSIBLE: ${{ matrix.ansible-version }}
