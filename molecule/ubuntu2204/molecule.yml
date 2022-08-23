@@ -15,7 +15,7 @@ lint: |
 
 platforms:
   - name: githubactions-ansible-role-molecule-ubuntu2004
-    image: ubuntu:20.04
+    image: ubuntu:22.04 #https://hub.docker.com/_/ubuntu
 
 provisioner:
   name: ansible
@@ -23,7 +23,7 @@ provisioner:
     converge: ../default/converge.yml
 
 scenario:
-  name: ubuntu2004
+  name: ubuntu2204
 
 verifier:
   name: testinfra

@@ -22,6 +22,7 @@ jobs:
           - '2.10.7'
         molecule-scenario:
           - ubuntu2004
+          - ubuntu2204
     env:
       MOLECULEW_ANSIBLE: ${{ matrix.ansible-version }}
 

@@ -1,5 +1,5 @@
 ---
-- name: create download directory
+- name: "Create download directory"
   file:
     state: directory
     mode: 'u=rwx,go=rx'
