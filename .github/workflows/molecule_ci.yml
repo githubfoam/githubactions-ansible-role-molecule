@@ -33,8 +33,7 @@ jobs:
           - fedora
           - opensuseleap
           - oraclelinux
-          # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916874942
-          # - rocky
+          - rocky
           - scientific
           - stream9
           - ubuntu2004
