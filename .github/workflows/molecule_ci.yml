@@ -26,7 +26,8 @@ jobs:
           # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916846600
           # - archlinux
           - centos7
-          - clearlinux
+          # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916863554
+          # - clearlinux
           - debian
           - fedora
           - opensuseleap
