@@ -23,7 +23,7 @@ provisioner:
     converge: ../default/converge.yml
 
 scenario:
-  name: centos8
+  name: rocky
 
 verifier:
   name: testinfra
