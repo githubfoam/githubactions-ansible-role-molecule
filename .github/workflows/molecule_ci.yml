@@ -35,10 +35,6 @@ jobs:
           - stream9
           - ubuntu2004
           - ubuntu2204
-
-
-
-
           - stream9
     env:
       MOLECULEW_ANSIBLE: ${{ matrix.ansible-version }}
