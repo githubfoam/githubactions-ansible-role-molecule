@@ -22,7 +22,8 @@ jobs:
           - '2.10.7'
         molecule-scenario:
           - alpine
-          - amazon
+          # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916874942
+          # - amazon
           # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916846600
           # - archlinux
           - centos7
@@ -32,7 +33,8 @@ jobs:
           - fedora
           - opensuseleap
           - oraclelinux
-          - rocky
+          # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916874942
+          # - rocky
           - scientific
           - stream9
           - ubuntu2004
