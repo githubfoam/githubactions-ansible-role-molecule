@@ -12,7 +12,7 @@ env:
   ANSIBLE_FORCE_COLOR: '1'
 
 jobs:
-  test:
+  molecule-test:
     name: Molecule test
     runs-on: ubuntu-20.04
 
@@ -68,11 +68,11 @@ jobs:
       - name: Dependency versions
         run: ./moleculew wrapper-versions
 
-      # - name: Molecule debug lint
-      #   run: ./moleculew --debug lint --scenario-name=${{ matrix.molecule-scenario }}
+      - name: Molecule debug lint
+        run: ./moleculew --debug lint --scenario-name=${{ matrix.molecule-scenario }}
 
-      # - name: Molecule debug test
-      #   run: ./moleculew --debug test --scenario-name=${{ matrix.molecule-scenario }}
+      - name: Molecule debug test
+        run: ./moleculew --debug test --scenario-name=${{ matrix.molecule-scenario }}
 
       - name: Molecule test
         run: ./moleculew test --scenario-name=${{ matrix.molecule-scenario }}
