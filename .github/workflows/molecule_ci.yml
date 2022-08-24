@@ -3,7 +3,7 @@ name: "molecule tests"
 on:
   push:
     branches:
-      - test
+      - main
 
 
 env:
@@ -22,13 +22,7 @@ jobs:
           - '2.10.7'
         molecule-scenario:
           - alpine
-          # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916874942
-          # - amazon
-          # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916846600
-          # - archlinux
           - centos7
-          # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916863554
-          # - clearlinux
           - debian
           - fedora
           - opensuseleap
