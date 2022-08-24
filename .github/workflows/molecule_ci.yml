@@ -12,6 +12,7 @@ env:
   ANSIBLE_FORCE_COLOR: '1'
 
 jobs:
+
   molecule-test:
     name: Molecule test
     runs-on: ubuntu-22.04 #https://github.com/actions/runner-images
@@ -76,3 +77,12 @@ jobs:
 
       - name: Molecule test
         run: ./moleculew test --scenario-name=${{ matrix.molecule-scenario }}
+
+  molecule-test-all:
+    if: ${{ always() }}
+    name: Test (matrix)
+    runs-on: ubuntu-22.04
+    needs: molecule-test
+    steps:
+      - name: Check test matrix status
+        run: "[[ '${{ needs.test.result }}' == 'success' ]] || exit 1"
