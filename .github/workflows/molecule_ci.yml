@@ -23,7 +23,8 @@ jobs:
         molecule-scenario:
           - alpine
           - amazon
-          - archlinux
+          # https://github.com/githubfoam/githubactions-ansible-role-molecule/actions/runs/2916846600
+          # - archlinux
           - centos7
           - clearlinux
           - debian
