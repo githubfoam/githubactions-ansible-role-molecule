@@ -1,0 +1,30 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+lint: |
+  set -e
+  # yamllint .
+  # yamllint -d "{extends: relaxed, rules: {line-length: {max: 120}}}" .
+  yamllint -c molecule/ubuntu2004/custom-yaml-lint.yml .
+  ansible-lint
+  flake8
+
+platforms:
+  - name: githubactions-ansible-role-molecule-ubuntu2004
+    image: oraclelinux:9 #https://hub.docker.com/_/oraclelinux
+
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../default/converge.yml
+
+scenario:
+  name: oraclelinux
+
+verifier:
+  name: testinfra
+  directory: ../default/tests
