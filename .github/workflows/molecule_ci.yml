@@ -21,12 +21,24 @@ jobs:
         ansible-version:
           - '2.10.7'
         molecule-scenario:
+          - alpine
+          - amazon
+          - archlinux
+          - centos7
+          - clearlinux
+          - debian
+          - fedora
+          - opensuseleap
+          - oraclelinux
+          - rocky
+          - scientific
+          - stream9
           - ubuntu2004
           - ubuntu2204
-          - opensuseleap
-          - fedora
-          - centos7
-          - debian
+
+
+
+
           - stream9
     env:
       MOLECULEW_ANSIBLE: ${{ matrix.ansible-version }}

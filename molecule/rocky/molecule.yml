@@ -15,7 +15,7 @@ lint: |
 
 platforms:
   - name: githubactions-ansible-role-molecule-ubuntu2004
-    image: rocky:9.0 #https://hub.docker.com/_/rockylinux/tags
+    image: rocky:9.0 #https://hub.docker.com/_/rockylinux
 
 provisioner:
   name: ansible

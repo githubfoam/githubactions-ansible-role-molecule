@@ -15,7 +15,7 @@ lint: |
 
 platforms:
   - name: githubactions-ansible-role-molecule-ubuntu2004
-    image: sl:7 #https://hub.docker.com/_/sl/tags
+    image: sl:7 #https://hub.docker.com/_/sl
 
 provisioner:
   name: ansible

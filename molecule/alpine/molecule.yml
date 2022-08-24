@@ -15,7 +15,7 @@ lint: |
 
 platforms:
   - name: githubactions-ansible-role-molecule-ubuntu2004
-    image: alpine:3.16.2 #https://hub.docker.com/_/amazonlinux/tags
+    image: alpine:3.16.2 #https://hub.docker.com/_/alpine
 
 provisioner:
   name: ansible
