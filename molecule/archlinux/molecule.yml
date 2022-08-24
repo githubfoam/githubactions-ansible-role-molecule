@@ -14,8 +14,10 @@ lint: |
   flake8
 
 platforms:
-  - name: githubactions-ansible-role-molecule-ubuntu2004
-    image: archlinux:latest #https://hub.docker.com/_/archlinux
+  - name: githubactions-ansible-role-molecule-archlinux
+    # image: archlinux:latest #https://hub.docker.com/_/archlinux
+    image: archlinux:base-devel-20210328.0.18194 #https://hub.docker.com/_/archlinux
+
 
 provisioner:
   name: ansible
